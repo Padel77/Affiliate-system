@@ -1,0 +1,19 @@
+root{
+  --bs-primary: #0C1A61 !important;
+  font-family: Almarai;
+}
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0rem;
+
+  text-align: center;
+  background-color: #F0F3FF;
+}
+*{
+    box-sizing: border-box;
+}
+.navbar{
+  background-color: #0C1A61;
+  color: #F0F3FF !important;
+}
