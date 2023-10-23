@@ -1,0 +1,11 @@
+.about-image {
+    height: 400px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.Carousel {
+    border: 1px solid rgba(249, 192, 106, 0.42);
+    background: #263E99;
+}

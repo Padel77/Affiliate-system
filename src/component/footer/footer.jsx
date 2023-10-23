@@ -4,14 +4,14 @@ import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function Footer() {
     return (
-        <div className='footer-bg mt-5'>
+        <div className='footer-bg '>
         <Card className="footer-bg fw-bold text-light text-center">
             <Card.Body>
                 <Card.Title className='fw-bold fs-3  '>ابدأ حلمك دلوقتي بسهولة مع منفعة</Card.Title>
                 <Card.Text className='fs-4 text-white'>
                     اكسب اكتر وزود مبيعاتك
                 </Card.Text>
-                <Button className='ms-3  fw-semibold' variant="light">سجل الان كمسوق</Button>
+                <Button className='me-3  fw-semibold' variant="light">سجل الان كمسوق</Button>
                 <Button className=' fw-semibold text-light' variant="info">سجل الان كتاجر</Button>
             </Card.Body>
             <Card.Footer className="border-top-white ">
