@@ -2,8 +2,127 @@ import './login.css'
 import img2 from '../../assets/login&register/login.png';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {useEffect, useState} from "react";
+import axiosInstance from "../../axiosConfig/axiosinstance.js";
+import Swal from "sweetalert2";
+import {useDispatch} from "react-redux";
+import {is_s_admin,usernamered,usertypered,usertokenred} from "../../store/action";
+import {AsyncStorage} from "reactjs-async-localstorage";
+
 function Login() {
+
+    const [userName,setUserName]=useState("")
+    const [password,setPassword] = useState("")
+    const [userToken,setUserToken] = useState("")
+    const navigate =useNavigate()
+    const dispatch = useDispatch();
+
+    const userCheck = async ()=>{
+
+
+            console.log('uesr check')
+             const toto = await AsyncStorage.getItem('manfa3aToken')
+            axiosInstance.post('/users/user_check_mobile',{token:toto})
+                .then(response=>{
+                    console.log(response)
+                    if(response.data.success){
+                        dispatch(usernamered(response.data.success['fullname']))
+                        dispatch(usertypered(response.data.success['usertype']))
+                        navigate('/home')
+                    }
+
+                }).catch(reso=>{
+                console.log(reso)
+            })
+
+        // if (userToken){
+        //
+        //
+        // }
+    }
+    useEffect(() => {
+
+        const chkTok =async ()=>{
+
+        console.log("use efect from login")
+            try {
+                const tuserToken = await AsyncStorage.getItem("manfa3aToken")
+                console.log(tuserToken)
+                if (tuserToken) {
+                    dispatch(usertokenred(tuserToken))
+                    setUserToken(tuserToken)
+
+                }
+            }
+
+            catch {
+
+            }}
+
+            chkTok()
+        userCheck()
+
+
+    }, [userName]);
+    const login_submit = ()=>{
+        const reg_data={
+            username:userName,
+            password:password,
+        }
+        const headers={
+            'Content-Type' : 'application/json'
+        }
+        axiosInstance.post("/users/login",reg_data,{headers})
+            .then(response=>{
+                if(response.data.success){
+                    // console.log(response.data['userdata'])
+                    localStorage.setItem("manfa3aToken", response.data['user_data'].token);
+                    localStorage.setItem("manfa3aProfile",response.data['user_data'].user_img)
+                    if (response.data['user_data'].usertype == 'Super_user') {
+                        dispatch(is_s_admin(true));
+
+                    }
+
+                    if (response.data.error == "too_many_requests") {
+                        dispatch(error_many(true));
+                        navigate("/", {replace: true});
+                    }
+                    navigate("/home");
+
+                    Swal.fire({
+                        title: 'تم تسجيل الدخول بنجاح',
+                        text: response.data.success,
+                        icon: 'success',
+                        timer: 2000, // Time in milliseconds (2 seconds in this example)
+                        showConfirmButton: false
+                    })
+                }
+                else {
+                    console.log(response.data)
+                    Swal.fire({
+                        title: 'خطأ',
+                        text: response.data.error,
+                        icon: 'error',
+                        // confirmButtonText: 'Cool'
+                        timer: 2000, // Time in milliseconds (2 seconds in this example)
+                        showConfirmButton: false
+                    })
+                }
+            }).catch(reso=>{
+            Swal.fire({
+                title: 'خطأ ',
+                text: "خطأ",
+                icon: 'error',
+                timer: 2000, // Time in milliseconds (2 seconds in this example)
+                showConfirmButton: false
+
+            })
+
+        })
+
+    }
+
     return (
         <div className="login">
             <div className="container pt-5 ">
@@ -19,17 +138,17 @@ function Login() {
                         <Form className=' w-100 d-block ' dir='rtl'>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>اسم المستخدم</Form.Label>
-                                <Form.Control className='w-75  ' type="text" placeholder="ادخل اسم السمتخدم" />
+                                <Form.Control className='w-75  ' type="text" placeholder="ادخل اسم السمتخدم"  onChange={(e)=>{setUserName(e.target.value)}}/>
 
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>كلمة المرور</Form.Label>
-                                <Form.Control className='w-75  ' type="password" placeholder="ادخل كلمة المرور" />
+                                <Form.Control className='w-75  ' type="password" placeholder="ادخل كلمة المرور" onChange={(e)=>{setPassword(e.target.value)}}/>
                             </Form.Group>
 
                         <p>نسيت كلمة المرور؟ <Link className='text-info' to='/ForgetPassword'>استرجاع</Link> </p>
-                            <Button className='ps-5 pe-5 fw-bold' variant="primary" type="submit">
+                            <Button className='ps-5 pe-5 fw-bold' variant="primary" type="button" onClick={login_submit}>
                                 الدخول
                             </Button>
                         </Form>

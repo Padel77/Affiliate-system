@@ -3,7 +3,7 @@ import obgImg from '../../assets/OBJECTS.png';
 import obgImg2 from '../../assets/OBJECTS2.png';
 function About() {
     return (
-            <div className="container pt-5">
+            <div className="container pt-5" id='#scrollspyHeading3'>
                 <div className="row pt-4">
                     <div className="col-12 col-md-6 text-end pt-3 ">
                         <h2 className='pb-3 fw-bold'> عن منفعة</h2>

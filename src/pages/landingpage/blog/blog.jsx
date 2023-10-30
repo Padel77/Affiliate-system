@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Coursemarket1 from '../../../assets/cards/image 12.png';
 import Coursemarket2 from '../../../assets/cards/image 13.png';
-import Coursemarket3 from '../../../assets/cards/image 14.png';
+import Coursemarket3 from '../../../assets/cards/image 13.png';
 
 function Blog() {
 
