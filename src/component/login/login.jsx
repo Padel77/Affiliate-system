@@ -15,6 +15,7 @@ function Login() {
     const [userName,setUserName]=useState("")
     const [password,setPassword] = useState("")
     const [userToken,setUserToken] = useState("")
+    const [loader,setLoader] = useState(false)
     const navigate =useNavigate()
     const dispatch = useDispatch();
 
@@ -66,6 +67,7 @@ function Login() {
 
     }, [userName]);
     const login_submit = ()=>{
+        setLoader(true)
         const reg_data={
             username:userName,
             password:password,
@@ -76,6 +78,7 @@ function Login() {
         axiosInstance.post("/users/login",reg_data,{headers})
             .then(response=>{
                 if(response.data.success){
+                    setLoader(false)
                     // console.log(response.data['userdata'])
                     localStorage.setItem("manfa3aToken", response.data['user_data'].token);
                     localStorage.setItem("manfa3aProfile",response.data['user_data'].user_img)
@@ -99,6 +102,7 @@ function Login() {
                     })
                 }
                 else {
+                    setLoader(false)
                     console.log(response.data)
                     Swal.fire({
                         title: 'خطأ',
@@ -110,6 +114,7 @@ function Login() {
                     })
                 }
             }).catch(reso=>{
+            setLoader(false)
             Swal.fire({
                 title: 'خطأ ',
                 text: "خطأ",
@@ -127,15 +132,12 @@ function Login() {
         <div className="login">
             <div className="container pt-5 ">
                 <div className="row pb-5 ">
-                    <div className="col-12 col-md-6 d-md-block d-none">
-                        <img className='w-100' src={img2}  alt='logo' />
-                    </div>
                     <div className="col-12 float-end col-md-6 pt-5 text-end  text-white mt-5">
                         <div className='mb-2'>
                             <h1>مرحبا بك فى <span className='text-info'>منفعة</span> </h1>
                             <p className='fw-bold'>قم بتسجيل الدخول إلى حسابك باستخدام اسم السمتخدم وكلمة المرور</p>
                         </div>
-                        <Form className=' w-100 d-block ' dir='rtl'>
+                        <Form className=' w-100 d-block ' >
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>اسم المستخدم</Form.Label>
                                 <Form.Control className='w-75  ' type="text" placeholder="ادخل اسم السمتخدم"  onChange={(e)=>{setUserName(e.target.value)}}/>
@@ -149,12 +151,18 @@ function Login() {
 
                         <p>نسيت كلمة المرور؟ <Link className='text-info' to='/ForgetPassword'>استرجاع</Link> </p>
                             <Button className='ps-5 pe-5 fw-bold' variant="primary" type="button" onClick={login_submit}>
-                                الدخول
+                                {loader?<div className="spinner-border" role="status">
+                                    < span className = "visually-hidden" > Loading...</span>
+                                </div>:'الدخول'
+                                }
                             </Button>
                         </Form>
                         <div className=' fw-bold'>
                             <p>لا يوجد لديك حساب؟ <Link className='text-info' to='/register'>التسجيل</Link> </p>
                         </div>
+                    </div>
+                    <div className="col-12 col-md-6 d-md-block d-none">
+                        <img className='w-100' src={img2}  alt='logo' />
                     </div>
                 </div>
             </div>

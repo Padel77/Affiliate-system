@@ -46,7 +46,7 @@ const INITIAL_VALUE={
         another_website: "IT’S NOT JUST ANOTHER WEBSITE",
         answer: "Answer",
         au_gust: "August 2022",
-        back_home: "Back to Home",
+        back_home: "Back to Affilatehome",
         back_sign_in: "BACK TO SIGN IN",
         be_among: "I’m happy to be among many people who want to learn about the huge and impressive work done during the year, and the plan for the next year is also very promising.",
         be_updated: "Be updated",

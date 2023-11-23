@@ -8,6 +8,7 @@ import axios from "axios";
 import axiosInstance from "../../axiosConfig/axiosinstance.js";
 import Swal from "sweetalert2";
 function Register() {
+    const [loader,setLoader] = useState(false)
     const [userName,setUserName]=useState("")
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
@@ -18,6 +19,7 @@ function Register() {
     const [userType,setUsertype]= useState("")
     const navigatee =useNavigate()
     const reg_submit = ()=>{
+        setLoader(true)
         const reg_data={
             username:userName,
             email:email,
@@ -36,6 +38,7 @@ function Register() {
         axiosInstance.post(`/users/register_${userType}`,reg_data,{headers})
             .then(response=>{
                 if(response.data.success){
+                    setLoader(false)
                     Swal.fire({
                         title: 'تم التسجيل',
                         text: response.data.success,
@@ -46,6 +49,7 @@ function Register() {
                     navigatee('/login')
                 }
                 else {
+                    setLoader(false)
                     console.log(response.data)
                     Swal.fire({
                         title: 'خطأ',
@@ -57,6 +61,7 @@ function Register() {
                     })
                 }
             }).catch(reso=>{
+            setLoader(false)
             Swal.fire({
                 title: 'خطأ ',
                 text: "خطأ",
@@ -75,15 +80,13 @@ function Register() {
     return (<div className="register">
             <div className="container pt-5 ">
                 <div className="row pb-5 ">
-                    <div className="col-12 col-md-6 d-xl-block d-none">
-                        <img className='w-100' src={img2} alt='logo'/>
-                    </div>
+
                     <div className="col-12 float-end col-xl-6 col pt-5 text-end  text-white mt-1">
                         <div className='mb-2'>
                             <h1>مرحبا بك فى التسجيل فـ <span className='text-info'>منفعة</span></h1>
                             <p className='fw-bold'>أدخل بياناتك بشكل صحيح، ثم انتظر رسالة القبول الإلكترونية</p>
                         </div>
-                        <Form className=' w-100 ' dir='rtl'>
+                        <Form className=' w-100 '>
                             <div className='d-flex gap-4'>
                                 <Form.Group className="mb-3" controlId="formBasicFullName">
                                     <Form.Label className='fw-bold'>الاسم بالكامل </Form.Label>
@@ -136,12 +139,18 @@ function Register() {
                                 </Form.Group>
                             </div>
                             <Button className='ps-5 pe-5 fw-bold' variant="primary" type="button" onClick={reg_submit}>
-                                التسجيــل
+                                {loader? <div className="spinner-border" role="status">
+                                    < span className = "visually-hidden" > Loading...</span>
+                                </div> :  ' التسجيــل'
+                                }
                             </Button>
                         </Form>
                         <div className=' fw-bold'>
                             <p> يوجد لديك حساب؟ <Link className='text-info' to='/login'>الدخول</Link></p>
                         </div>
+                    </div>
+                    <div className="col-12 col-md-6 d-xl-block d-none">
+                        <img className='w-100' src={img2} alt='logo'/>
                     </div>
                 </div>
             </div>

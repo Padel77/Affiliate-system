@@ -1,7 +1,9 @@
 import './cstOpenion.css';
 import {useState} from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import ExampleCarouselImage from '../../../assets/image/mnf3a.jpg';
+import ExampleCarouselImage from '../../../assets/openion.png';
+import op from '../../../assets/op.png';
+import person from '../../../assets/person.png';
 
 function CstOpenion() {
 
@@ -15,40 +17,39 @@ function CstOpenion() {
                 <h2 className=' m-md-auto text-end border-end border-primary border-5 p-0 pe-2'>اراء العملاء</h2>
             </div>
             <Carousel className='Carousel' data-bs-theme="dark">
+                <img
+                    className="position-absolute py-5  px-5 d-flex "
+                    src={op}
+                    alt="theme"
+                />
+                <img
+                    className="d-block  h-auto"
+                    src={ExampleCarouselImage}
+                    alt="fixed slide"
+                />
                 <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src={ExampleCarouselImage}
-                        alt="First slide"
-                    />
                     <Carousel.Caption>
-                        <h4>First slide label</h4>
+                        <img src={person} className='pb-5 mb-5 w-25 w-md-50'/>
+                        <h4>Courtney Henry</h4>
+                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </Carousel.Caption>
+
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Carousel.Caption>
+                        <img src={person} className='pb-5 mb-5 w-25 w-md-50'/>
+                        <h4>Courtney Henry</h4>
                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </Carousel.Caption>
+
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="holder.js/800x400?text=Second slide&bg=eee"
-                        alt="Second slide"
-                    />
                     <Carousel.Caption>
-                        <h5>Second slide label</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <img src={person} className='pb-5 mb-5 w-25 w-md-50'/>
+                        <h4>Courtney Henry</h4>
+                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="holder.js/800x400?text=Third slide&bg=e5e5e5"
-                        alt="Third slide"
-                    />
-                    <Carousel.Caption>
-                        <h5 className=''>Third slide label</h5>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                        </p>
-                    </Carousel.Caption>
+
                 </Carousel.Item>
             </Carousel>
 

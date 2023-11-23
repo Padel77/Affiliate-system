@@ -19,6 +19,7 @@ function Services() {
                                             حماية للحفاظ علي المنتجات</p>
                                     </div>
                                 </div>
+
                                 <div className="col-md-5">
                                     <img src={obgImg2} className="img-fluid rounded-start" alt="..."/>
                                 </div>

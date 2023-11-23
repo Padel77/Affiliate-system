@@ -1,7 +1,7 @@
 import './solution.css';
 import obgImg1 from '../../../assets/cards/triggerSolution/charge.png';
-import obgImg2 from '../../../assets/cards/triggerSolution/b6.png';
-import obgImg3 from '../../../assets/cards/triggerSolution/storage.png';
+import obgImg2 from '../../../assets/cards/triggerSolution/B6.png';
+// import obgImg3 from '../../../assets/cards/triggerSolution/storage.png';
 import obgImg4 from '../../../assets/cards/triggerSolution/customerServ.png';
 import obgImg5 from '../../../assets/cards/triggerSolution/addition1.png';
 import obgImg6 from '../../../assets/cards/triggerSolution/boxing.png';

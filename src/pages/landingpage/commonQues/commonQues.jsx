@@ -8,7 +8,7 @@ function CommonQues() {
                 <div className='header w-100 mb-4'>
                     <h2 className=' m-md-auto text-end border-end border-primary border-5 p-0 pe-2'>الاسئلة الشائعة</h2>
                 </div>
-        <Accordion className='fw-semibold' dir='rtl '>
+        <Accordion  className='fw-semibold ' >
             <Accordion.Item eventKey="0">
                 <Accordion.Header>سعر المنصة شاملة الضريبه  ؟</Accordion.Header>
                 <Accordion.Body>

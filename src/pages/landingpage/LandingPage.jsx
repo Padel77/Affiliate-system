@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from "./logo/logo.jsx";
-import Consider from "./considers/consider.jsx";
+ import Consider from "./considers/consider.jsx";
 import About from "./about-us/about.jsx";
 import Solution from "./solutions/solution.jsx";
 import Services from "./productAndServices/services.jsx";

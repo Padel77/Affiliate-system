@@ -46,15 +46,13 @@ const dispatch =useDispatch()
         <div className="resetPassword">
             <div className="container pt-5 ">
                 <div className="row ">
-                    <div className="col-12 col-md-6 d-xl-block d-none">
-                        <img className='w-100' src={img2}  alt='logo' />
-                    </div>
+
                     <div className="col-12 float-end col-xl-6 col pt-5 text-end  text-white mt-5">
                         <div className='mb-2'>
                             <h1>نسيت كلمة المرور ؟ <span className='text-info'>منفعة</span> </h1>
                             <p className='fw-bold'>قم بأدخال البريد الإلكتروني وستصلك رســـالة عليه </p>
                         </div>
-                        <Form className=' w-100 d-block ' dir='rtl'>
+                        <Form className=' w-100 d-block ' >
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>البريد الالكترونى</Form.Label>
                                 <Form.Control className='w-75 o  ' onChange={(e)=>{setEmail(e.target.value)}} type="email" placeholder="Enter email" />
@@ -73,6 +71,9 @@ const dispatch =useDispatch()
                         <div className=' fw-bold'>
                             <p>لا يوجد لديك حساب؟ <Link className='text-info' to='/register'>التسجيل</Link> </p>
                         </div>
+                    </div>
+                    <div className="col-12 col-md-6 d-xl-block d-none">
+                        <img className='w-100' src={img2}  alt='logo' />
                     </div>
                 </div>
             </div>
