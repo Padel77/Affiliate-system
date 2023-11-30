@@ -1,6 +1,6 @@
 import React from 'react';
-import Adverst1 from '../../../assets/homeAffilate/adverst1.png';
-import Adverst2 from '../../../assets/homeAffilate/adverst2.png';
+import Adverst1 from '../../../../assets/homeAffilate/adverst1.png';
+import Adverst2 from '../../../../assets/homeAffilate/adverst2.png';
 
 
 function Advertising(props) {

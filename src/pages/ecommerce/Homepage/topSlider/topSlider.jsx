@@ -1,8 +1,8 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import CarouselImage1 from '../../../assets/homeAffilate/slider1.png';
-import CarouselImage2 from '../../../assets/homeAffilate/slider2.png';
-import CarouselImage3 from '../../../assets/homeAffilate/slider1.png';
+import CarouselImage1 from '../../../../assets/homeAffilate/slider1.png';
+import CarouselImage2 from '../../../../assets/homeAffilate/slider2.png';
+import CarouselImage3 from '../../../../assets/homeAffilate/slider1.png';
 import Container from "react-bootstrap/Container";
 import {Col, Row} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";

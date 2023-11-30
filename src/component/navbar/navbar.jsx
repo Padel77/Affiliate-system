@@ -56,11 +56,13 @@ function Navbar() {
     const [name_user, setName_user] = useState()
     const user = useSelector((state) => state.usernamered);
     const isloaded = useSelector((state) => state.isload);
+    const [navPosition, setNavPosition] = useState('fixed');
     const [navitems, setNavitems] = useState({
         signin: "d-block",
         signout: "d-none",
         signup:"d-lg-block"
     });
+
 
     useEffect(() => {
         if (toto){
@@ -94,7 +96,26 @@ function Navbar() {
         // navigate("/home");
         // }
 
+        const handleScroll = () => {
+            if (window.screenX > 0 && window.screenY >   0) {
+                setNavItems((prevItems) => ({
+                    ...prevItems,
+                    signup: 'd-none' // Hide the signup item
+                }));
+                setNavPosition('absolute'); // Change the position to absolute
+            } else {
+                setNavItems((prevItems) => ({
+                    ...prevItems,
+                    signup: 'nav-item' // Show the signup item
+                }));
+                setNavPosition('fixed'); // Change the position to fixed
+            }
+        };
 
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, [ isloaded, toto]);
 
     async function logout() {
@@ -130,7 +151,7 @@ function Navbar() {
 
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light  nav-underline  text-light fw-bold" dir='rtl'>
+        <nav data-aos="zoom-fade-in"  className={`navbar navbar-expand-lg navbar-light  ${navPosition}  nav-underline  text-light fw-bold`} dir='rtl'>
         <div className="container-fluid">
         <Link className="navbar-brand" href="#"><img  src={image } alt='logo'/></Link>
             <div className={`${navitems.signout}`}>
@@ -138,11 +159,6 @@ function Navbar() {
                     <h5>{user}</h5>
             </div>
             <div className='d-flex gap-3'>
-                <button className={`  btn  text-capitalize  fw-bold btn text-bg-info  ${navitems.signout}`} type="button">
-                    <Link className='text-decoration-none text-light  ' onClick={() => { logout();  }}>{loader? <div className="spinner-border" role="status">
-                        < span className = "visually-hidden" > Loading...</span>
-                    </div> :    ' تسجيل الخروج'}</Link>
-                </button>
                 <button className={`  btn  text-capitalize  fw-bold  text-bg-light border ${navitems.signin}`} type="button">
                     <Link className='text-decoration-none text-primary ' to='/login' >تسجيـل الدخـول</Link>
                 </button>

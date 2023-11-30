@@ -128,8 +128,8 @@ function AffilateNavbar() {
         await axiosInstance.post(`/users/logout`, {
                 token: toto,
             }, {
-                    "Authorization": `Token ${toto}`,
                 headers:{
+                    "Authorization": `Token ${toto}`,
                     "Content-Type": "application/json",
                 }
             }
@@ -147,8 +147,8 @@ function AffilateNavbar() {
                     navigate("/", {replace: true});
                 }
             }
-        }).catch(error => {
 
+        }).catch(error => {
             console.log(error);
         });
     }
@@ -159,8 +159,8 @@ function AffilateNavbar() {
     <Navbar  expand="lg" className=" bg-body-tertiary p-0  pe-md-3 ps-md-3">
         <Container fluid>
             <Navbar.Brand href="#" className='d-flex gap-mg-2 '>
-                <Button variant="" className=' fw-bold'><FontAwesomeIcon icon={faRightToBracket} size="xl" />&nbsp;&nbsp;تسجل الدخول </Button>
-                <Button variant="" className=' fw-bold'><FontAwesomeIcon icon={faUser} size="xl" />&nbsp;&nbsp;حساب جديد</Button>
+                <Button variant="" className=' fw-bold' onClick={() => { logout()  }}><FontAwesomeIcon icon={faRightToBracket} size="xl" />&nbsp;&nbsp;تسجل الخروج </Button>
+                {/*<Button variant="" className=' fw-bold'><FontAwesomeIcon icon={faUser} size="xl" />&nbsp;&nbsp;حساب جديد</Button>*/}
                 <div className={`${navitems.signout}`}>
                     <img className={`rounded-circle img-fluid `} style={{width:50,height:40}} src={ `data:image/jpeg;base64, ${localStorage.getItem('manfa3aProfile')}`}/>
                     <h5>{user}</h5>
@@ -189,7 +189,7 @@ function AffilateNavbar() {
             </Dropdown>
         </Container>
     </Navbar>
-            <Navbar  expand="lg" className=" navbar justify-content-center align-content-center pe-md-3 ps-md-3 p-0">
+            <Navbar  expand="lg" className="navbar justify-content-center align-content-center pe-md-3 ps-md-3 p-0">
                 <Container className='ps-2 pe-2'  fluid>
                     <Navbar.Brand href="#">
                         <img  src={image } alt='logo'/>

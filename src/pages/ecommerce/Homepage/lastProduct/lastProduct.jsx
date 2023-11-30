@@ -1,5 +1,5 @@
 import React from 'react';
-import CarouselImage1 from '../../../assets/homeAffilate/PhoneCard.png';
+import CarouselImage1 from '../../../../assets/homeAffilate/slider1.png';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import {Col} from "react-bootstrap";
@@ -15,7 +15,7 @@ function Offering(props) {
     return (
         <div className='HomePage text-end mb-2 bg-light pb-2'>
             <div className='d-flex justify-content-between p-3  mb-1 border-bottom border-2'>
-                <h5 className='fw-400 mb-0 '>عروض اليوم</h5>
+                <h5 className='fw-400 mb-0 '>المنتجات الحديثة</h5>
                 <a className='text-decoration-none' href='#'>عرض المزيد</a>
             </div>
             <CardGroup className='d-flex  ms-0  '>

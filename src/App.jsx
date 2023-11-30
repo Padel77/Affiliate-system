@@ -15,6 +15,7 @@ import {useDispatch} from "react-redux";
 import PrivateRoutes from "./utils/PrivateRoutes";
 import AffilateHome from "./pages/ecommerce/Homepage/affilatehome.jsx";
 import blogs from "./pages/ecommerce/blogs/blog.jsx";
+import privateRoutes from "./utils/PrivateRoutes";
 function App() {
     const LoadingMarkup = () => <div className='d-flex justify-content-center align-items-center '
                                      style={{height: "100vh"}}>
@@ -35,7 +36,7 @@ function App() {
     const LazyResetpass = React.lazy(()=>import('./component/ResetPassword/ResetPassword'))
     const LazyActivateUser = React.lazy(()=>import('./component/ActivateUser/ActivateUser'))
 
-
+const token = localStorage.getItem('manfa3aToken')
 
     useEffect(() => {
         // Function to extract the token from the URL
@@ -47,26 +48,24 @@ function App() {
                 // Now you have the token, and you can use it as needed.'
                 localStorage.removeItem("manfa3aToken")
                 // localStorage.removeItem("visitToken")
-                window.location.href = 'http://localhost:5174';
+                window.location.href = 'http://localhost:5173';
             }
-        };
         extractTokenFromUrl();
-    }, []);
+            }
+    }, [token]);
 
   return (
-    < div dir='rtl'>
+    <div dir='rtl'>
       <BrowserRouter >
-          <Navbar/>
-          {/*<AffilateNavbar/>*/}
           <Suspense fallback={<LoadingMarkup/>}>
             <Routes>
-                {/*<Route element={<PrivateRoutes/>}>*/}
-                <Route exact path='/Home' element={<AffilateHome/>}   />
+                <Route element={<PrivateRoutes/>}>
+                    <Route exact path='/home' element={<AffilateHome/>}   />
                     <Route exact path='/blogs' element={<LazyBlogs/>}   />
                     {/*<Route exact path='/privatepage3' element={<LazyPrivatePage3/>}   />*/}
-                {/*</Route>*/}
+                </Route>
                 <Route exact path='/' element={<LazyLanding/>}   />
-                {/*<Route exact path='/home' element={<AffilateHome/>}  />*/}
+                <Route exact path='/home' element={<AffilateHome/>}  />
                 <Route exact path='/login' element={<LazyLogin/>}   />
                 <Route exact path='/register'  element={<LazyRegister/>}  />
                 <Route exact path='/ForgetPassword' element={<LazyForget/>}   />
@@ -74,8 +73,6 @@ function App() {
                 <Route exact path='/activate/:token' element={<LazyActivateUser/>}   />
             </Routes>
               </Suspense>
-          <AffilateFooter/>
-          {/*<Footer/>*/}
       </BrowserRouter>
 
     </div>

@@ -10,19 +10,19 @@ function Consider() {
     return (<div className="consider p-4 ">
             <div className="container bg-white justify-content-center ">
                 <div className="row  p-3 justify-content-center align-content-center d-flex gap-3">
-                    <div className="col-sm col-md">
+                    <div data-aos='flip-up' className="col-sm col-md">
                         <img src={cons1} className='img-fluid' alt='flyNext-Logo' />
                     </div>
-                    <div className="col-sm col-md">
+                    <div data-aos='flip-up' className="col-sm col-md">
                         <img src={cons2} className='img-fluid' alt='FSN-Logo' />
                     </div>
-                    <div className="col-sm col-md">
+                    <div data-aos='flip-up' className="col-sm col-md">
                         <img src={cons3} className='img-fluid' alt='DRSC-Logo' />
                     </div>
-                    <div className="col-sm col-md">
+                    <div data-aos='flip-up' className="col-sm col-md">
                         <img src={cons4} className='img-fluid' alt='DRSC-Logo' />
                     </div>
-                    <div className="col-sm col-md">
+                    <div data-aos='flip-up' className="col-sm col-md">
                         <img src={cons5} className='img-fluid' alt='IKDTO-Logo' />
                     </div>
                 </div>

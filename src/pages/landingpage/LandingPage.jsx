@@ -8,9 +8,16 @@ import CstOpenion from "./cstOpenion/cstOpenion.jsx";
 import CommonQues from "./commonQues/commonQues.jsx";
 import LerningMarketing from "./lernningMarketing/lernnigMarketing.jsx";
 import Blog from "./blog/blog.jsx";
-
+import Navbar from "../../component/navbar/navbar.jsx";
+import Footer from "../../component/footer/footer.jsx";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 function LandingPage(props) {
-    return (
+    AOS.init({
+        duration : 2000
+    })
+    return (<>
+        <Navbar/>
         <div>
             <Logo/>
             <Consider/>
@@ -22,7 +29,8 @@ function LandingPage(props) {
             <LerningMarketing/>
             <Blog/>
         </div>
-    );
+        <Footer/>
+    </>);
 }
 
 export default LandingPage;

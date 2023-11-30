@@ -18,7 +18,9 @@
 }
 
 button,Button:hover{
-  margin-bottom: 5px;
+
+    background-color: #0C1A61;
+    border: none;
   transform-style: flat;
   transition : all 0.5s ease-in-out;
 }

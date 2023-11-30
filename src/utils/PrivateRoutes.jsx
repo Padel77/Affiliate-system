@@ -34,15 +34,11 @@ const PrivateRoutes = () => {
                     console.log(res.data.error)
                      localStorage.removeItem("manfa3aToken");
                 }
-
-
             }).catch(err => {
                 console.log(err);
             })
     }
-
     useEffect(() => {
-
         if (token) {
             check();
         } else {

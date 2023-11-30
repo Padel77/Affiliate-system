@@ -19,7 +19,9 @@ function Solution() {
         <div className="container pt-5">
             <div className="triger">
                 <div className='header w-100 mb-4'>
-                        <h2 className='w-auto  text-end border-end -3 border-4 border-primary pe-2'> حلــــــــول منفعة للتاجر</h2>
+                        <h2 data-aos="fade-up"
+                            data-aos-easing="linear"
+                            data-aos-duration="1500" className='w-auto  text-end border-end -3 border-4 border-primary pe-2'> حلــــــــول منفعة للتاجر</h2>
                 </div>
                 <div className="row row-cols-1 d-flex row-cols-md-3 g-4">
                     <div className="col">
