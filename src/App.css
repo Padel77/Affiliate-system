@@ -6,9 +6,11 @@
   font-family: "Almarai";
   text-align: center;
   background-color: #F0F3FF;
+
 }
 
 *{
+  cursor : progress;
   box-sizing: border-box;
   font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
@@ -23,4 +25,9 @@ button,Button:hover{
     border: none;
   transform-style: flat;
   transition : all 0.5s ease-in-out;
+}
+
+.card:hover{
+  border: 2px solid #0c1a61;
+  transition: 0.8s ease-in-out;
 }

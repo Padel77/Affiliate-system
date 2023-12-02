@@ -7,6 +7,8 @@ import Swal from "sweetalert2";
 import {useDispatch} from "react-redux";
 import {useState} from "react";
 import axiosInstance from "../../axiosConfig/axiosinstance";
+import Navbar from "../navbar/navbar.jsx";
+import Footer from "../footer/footer.jsx";
 function ForgetPassword() {
 const dispatch =useDispatch()
     const navigateee =useNavigate()
@@ -42,7 +44,8 @@ const dispatch =useDispatch()
             timer: 1500
         });
     }
-    return (
+    return (<>
+    <Navbar/>
         <div className="resetPassword">
             <div className="container pt-5 ">
                 <div className="row ">
@@ -78,7 +81,8 @@ const dispatch =useDispatch()
                 </div>
             </div>
         </div>
-    );
+        <Footer/>
+    </>);
 }
 
 export default ForgetPassword;

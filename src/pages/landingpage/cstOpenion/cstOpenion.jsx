@@ -12,22 +12,23 @@ function CstOpenion() {
     const handleSelect = (selectedIndex) => {
         setIndex(selectedIndex);
     };
-    return (<div className="container pt-5 ">
+    return (<div className="container pt-5 " id='#ass'>
             <div className='header w-100 mb-4'>
                 <h2 className=' m-md-auto text-end border-end border-primary border-5 p-0 pe-2'>اراء العملاء</h2>
             </div>
-            <Carousel className='Carousel' data-bs-theme="dark">
+            <Carousel  className='Carousel ' data-bs-theme="dark">
                 <img
-                    className="position-absolute py-5  px-5 d-flex "
+                    className="position-absolute border-none py-5  px-5 d-flex "
                     src={op}
                     alt="theme"
                 />
+
                 <img
-                    className="d-block  h-auto"
+                    className="d-block border-none  h-auto"
                     src={ExampleCarouselImage}
                     alt="fixed slide"
                 />
-                <Carousel.Item>
+                <Carousel.Item >
                     <Carousel.Caption>
                         <img src={person} className='pb-5 mb-5 w-25 w-md-50'/>
                         <h4>Courtney Henry</h4>

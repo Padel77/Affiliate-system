@@ -7,6 +7,8 @@ import {useState} from "react";
 import axios from "axios";
 import axiosInstance from "../../axiosConfig/axiosinstance.js";
 import Swal from "sweetalert2";
+import Navbar from "../navbar/navbar.jsx";
+import Footer from "../footer/footer.jsx";
 function Register() {
     const [loader,setLoader] = useState(false)
     const [userName,setUserName]=useState("")
@@ -77,7 +79,9 @@ function Register() {
 
 
 
-    return (<div className="register">
+    return (<>
+        <Navbar/>
+        <div className="register">
             <div className="container pt-5 ">
                 <div className="row pb-5 ">
 
@@ -154,7 +158,9 @@ function Register() {
                     </div>
                 </div>
             </div>
-        </div>);
+        </div>
+        <Footer/>
+    </>);
 }
 
 export default Register;

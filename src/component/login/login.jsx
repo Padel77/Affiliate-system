@@ -9,6 +9,8 @@ import Swal from "sweetalert2";
 import {useDispatch, useSelector} from "react-redux";
 import {is_s_admin,usernamered,usertypered,usertokenred,usertype} from "../../store/action";
 import {AsyncStorage} from "reactjs-async-localstorage";
+import Navbar from "../navbar/navbar.jsx";
+import Footer from "../footer/footer.jsx";
 function Login() {
     const [userName,setUserName]=useState("")
     const [password,setPassword] = useState("")
@@ -125,7 +127,8 @@ function Login() {
 
     }
 
-    return (
+    return (<>
+        <Navbar/>
         <div className="login">
             <div className="container pt-5 ">
                 <div className="row pb-5 ">
@@ -164,7 +167,8 @@ function Login() {
                 </div>
             </div>
         </div>
-    );
+        <Footer/>
+    </>);
 }
 
 export default Login;

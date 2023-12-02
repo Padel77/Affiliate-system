@@ -23,23 +23,27 @@ function Solution() {
                             data-aos-easing="linear"
                             data-aos-duration="1500" className='w-auto  text-end border-end -3 border-4 border-primary pe-2'> حلــــــــول منفعة للتاجر</h2>
                 </div>
-                <div className="row row-cols-1 d-flex row-cols-md-3 g-4">
-                    <div className="col">
+                <div className="row row-cols-2 row-cols-lg-3  d-flex  g-4">
+                    <div data-aos="fade-up"
+                         data-aos-easing="linear"
+                         data-aos-duration="1000" className="col">
                         <div className="card mb-3" style={{maxWidth: '540px'}}>
-                            <div className="row g-0">
-                                <div className="col-md-7">
+                            <div className="row g-0 d-flex">
+                                <div className="col-md-7 ">
                                     <div className="card-body">
                                         <h5 className="card-title text-primary pb-3">الشحن</h5>
                                         <p className="card-text fw-semibold text-dark">توفير الشحن بجودة عاليه لضمان أعلي نسبة تسليم بسعر موحد علي مستوي مصر</p>
                                     </div>
                                 </div>
-                                <div className="col-md-5">
-                                    <img src={obgImg1} className="img-fluid rounded-start" alt="..."/>
+                                <div  className="col-md-5 ">
+                                    <img src={obgImg1} className="img-thumbnail card-img-top rounded-end-pill" alt="..."/>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col">
+                    <div data-aos="fade-up"
+                         data-aos-easing="linear"
+                         data-aos-duration="1100" className="col">
                         <div className="card mb-3" style={{maxWidth: '540px'}}>
                             <div className="row g-0">
                                 <div className="col-md-7">
@@ -49,12 +53,14 @@ function Solution() {
                                     </div>
                                 </div>
                                 <div className="col-md-5">
-                                    <img src={obgImg6} className="img-fluid rounded-start" alt="..."/>
+                                    <img src={obgImg6} className="img-thumbnail card-img-top rounded-end-pill" alt="..."/>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col">
+                    <div data-aos="fade-up"
+                         data-aos-easing="linear"
+                         data-aos-duration="1200" className="col">
                         <div className="card mb-3" style={{maxWidth: '540px'}}>
                             <div className="row g-0">
                                 <div className="col-md-7">
@@ -64,12 +70,14 @@ function Solution() {
                                     </div>
                                 </div>
                                 <div className="col-md-5">
-                                    <img src={marImg2} className="img-fluid rounded-start" alt="..."/>
+                                    <img src={marImg2} className="img-thumbnail card-img-top rounded-end-pill" alt="..."/>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col">
+                    <div data-aos="fade-up"
+                         data-aos-easing="linear"
+                         data-aos-duration="1300" className="col">
                         <div className="card mb-3" style={{maxWidth: '540px'}}>
                             <div className="row g-0">
                                 <div className="col-md-7">
@@ -80,12 +88,14 @@ function Solution() {
                                     </div>
                                 </div>
                                 <div className="col-md-5">
-                                    <img src={obgImg4} className="img-fluid rounded-start" alt="..."/>
+                                    <img src={obgImg4} className="img-thumbnail card-img-top rounded-end-pill" alt="..."/>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col">
+                    <div data-aos="fade-up"
+                         data-aos-easing="linear"
+                         data-aos-duration="1400" className="col">
                         <div className="card mb-3" style={{maxWidth: '540px'}}>
                             <div className="row g-0">
                                 <div className="col-md-7">
@@ -95,12 +105,14 @@ function Solution() {
                                     </div>
                                 </div>
                                 <div className="col-md-5">
-                                    <img src={obgImg5} className="img-fluid rounded-start" alt="..."/>
+                                    <img src={obgImg5} className="img-thumbnail card-img-top rounded-end-pill" alt="..."/>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col">
+                    <div data-aos="fade-up"
+                         data-aos-easing="linear"
+                         data-aos-duration="1500" className="col">
                         <div className="card mb-3" style={{maxWidth: '540px'}}>
                             <div className="row g-0">
                                 <div className="col-md-7">
@@ -111,16 +123,16 @@ function Solution() {
                                     </div>
                                 </div>
                                 <div className="col-md-5">
-                                    <img src={obgImg2} className="img-fluid rounded-start" alt="..."/>
+                                    <img src={obgImg2} className="img-thumbnail card-img-top rounded-end-pill" alt="..."/>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className='header w-100 mb-4'>
-                        <button className="btn btn-sm btn-outline-light fw-bold fs-5 bg-info m-2 p-2 ps-4 pe-4 "
+                        <button data-aos="fade-left" data-aos="fade-up" className="btn btn-sm btn-outline-light fw-bold fs-5 bg-info m-2 p-2 ps-4 pe-4 "
                                 type="button">شاهد الفيديو
                         </button>
-                        <button className="btn btn-sm btn-outline-light fw-bold fs-5 bg-primary m-2 p-2 ps-4 pe-4"
+                        <button data-aos="fade-right" className="btn btn-sm btn-outline-light fw-bold fs-5 bg-primary m-2 p-2 ps-4 pe-4"
                                 type="button">سجل الآن كتاجر
                         </button>
                     </div>
@@ -128,10 +140,14 @@ function Solution() {
             </div>
             <div className="triger mt-5 ">
                 <div className='header w-100 mb-4'>
-                    <h2 className='w-auto  text-end border-end -3 border-4 border-primary pe-2 '>حلــــــــول منفعة للمسوق</h2>
+                    <h2 data-aos="fade-up"
+                        data-aos-easing="linear"
+                        data-aos-duration="2000" className='w-auto  text-end border-end -3 border-4 border-primary pe-2 '>حلــــــــول منفعة للمسوق</h2>
                 </div>
-                <div className="row row-cols-1 d-flex row-cols-md-3 g-4">
-                    <div className="col">
+                <div className="row row-cols-2 row-cols-lg-3  d-flex  g-4">
+                    <div data-aos="fade-up"
+                         data-aos-easing="linear"
+                         data-aos-duration="1000"  className="col">
                         <div className="card mb-3" style={{maxWidth: '540px'}}>
                             <div className="row g-0">
                                 <div className="col-md-7">
@@ -142,12 +158,14 @@ function Solution() {
                                     </div>
                                 </div>
                                 <div className="col-md-5">
-                                    <img src={marImg4} className="w-100 rounded-start" alt="..."/>
+                                    <img src={marImg4} className="img-thumbnail card-img-top rounded-end-pill" alt="..."/>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col">
+                    <div data-aos="fade-up"
+                         data-aos-easing="linear"
+                         data-aos-duration="1100" className="col">
                         <div className="card mb-3" style={{maxWidth: '540px'}}>
                             <div className="row g-0">
                                 <div className="col-md-7">
@@ -158,12 +176,14 @@ function Solution() {
                                     </div>
                                 </div>
                                 <div className="col-md-5">
-                                    <img src={marImg2} className="img-fluid rounded-start" alt="..."/>
+                                    <img src={marImg2} className="img-thumbnail card-img-top rounded-end-pill" alt="..."/>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col">
+                    <div data-aos="fade-up"
+                         data-aos-easing="linear"
+                         data-aos-duration="1200" className="col">
                         <div className="card mb-3" style={{maxWidth: '540px'}}>
                             <div className="row g-0">
                                 <div className="col-md-7">
@@ -174,12 +194,14 @@ function Solution() {
                                     </div>
                                 </div>
                                 <div className="col-md-5">
-                                    <img src={marImg1} className="img-fluid rounded-start" alt="..."/>
+                                    <img src={marImg1} className="img-thumbnail card-img-top rounded-end-pill" alt="..."/>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col">
+                    <div data-aos="fade-up"
+                         data-aos-easing="linear"
+                         data-aos-duration="1300" className="col">
                         <div className="card mb-3" style={{maxWidth: '540px'}}>
                             <div className="row g-0">
                                 <div className="col-md-7">
@@ -190,12 +212,14 @@ function Solution() {
                                     </div>
                                 </div>
                                 <div className="col-md-5">
-                                    <img src={marImg6} className="img-fluid rounded-start" alt="..."/>
+                                    <img src={marImg6} className="img-thumbnail card-img-top rounded-end-pill" alt="..."/>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col">
+                    <div data-aos="fade-up"
+                         data-aos-easing="linear"
+                         data-aos-duration="1400" className="col">
                         <div className="card mb-3" style={{maxWidth: '540px'}}>
                             <div className="row g-0">
                                 <div className="col-md-7">
@@ -206,12 +230,14 @@ function Solution() {
                                     </div>
                                 </div>
                                 <div className="col-md-5">
-                                    <img src={marImg5} className="img-fluid rounded-start" alt="..."/>
+                                    <img src={marImg5} className="img-thumbnail card-img-top rounded-end-pill" alt="..."/>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col">
+                    <div data-aos="fade-up"
+                         data-aos-easing="linear"
+                         data-aos-duration="1500" className="col">
                         <div className="card mb-3" style={{maxWidth: '540px'}}>
                             <div className="row g-0">
                                 <div className="col-md-7">
@@ -222,16 +248,16 @@ function Solution() {
                                     </div>
                                 </div>
                                 <div className="col-md-5">
-                                    <img src={marImg3} className="img-fluid rounded-start" alt="..."/>
+                                    <img src={marImg3} className="img-thumbnail card-img-top rounded-end-pill" alt="..."/>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className='header w-100 mb-4'>
-                        <button className="btn btn-sm btn-outline-light fw-bold fs-5 bg-info m-2 p-2 ps-4 pe-4 "
+                        <button data-aos="fade-up" className="btn btn-sm btn-outline-light fw-bold fs-5 bg-info m-2 p-2 ps-4 pe-4 "
                                 type="button">شاهد الفيديو
                         </button>
-                        <button className="btn btn-sm btn-outline-light fw-bold fs-5 bg-primary m-2 p-2 ps-4 pe-4"
+                        <button data-aos="fade-down" className="btn btn-sm btn-outline-light fw-bold fs-5 bg-primary m-2 p-2 ps-4 pe-4"
                                 type="button">سجل الآن كمسوق
                         </button>
                     </div>

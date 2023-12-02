@@ -6,6 +6,7 @@ import {usernamered, usertokenred, usertypered, error_many, isload, userimgred} 
 import {useEffect,useState} from "react";
 import axiosInstance from "../../axiosConfig/axiosinstance";
 import { motion } from "framer-motion";
+// import {position} from "html2canvas/dist/types/css/property-descriptors/position.js";
 // import { MenuItem } from "./MenuItem";
 
 function Navbar() {
@@ -47,8 +48,6 @@ function Navbar() {
                 dispatch(error_many(true));
                 navigate("/", {replace: true});
             }
-
-
         }).catch(err => {
             // console.log(err);
         })
@@ -98,13 +97,13 @@ function Navbar() {
 
         const handleScroll = () => {
             if (window.screenX > 0 && window.screenY >   0) {
-                setNavItems((prevItems) => ({
+                setNavitems((prevItems) => ({
                     ...prevItems,
                     signup: 'd-none' // Hide the signup item
                 }));
                 setNavPosition('absolute'); // Change the position to absolute
             } else {
-                setNavItems((prevItems) => ({
+                setNavitems((prevItems) => ({
                     ...prevItems,
                     signup: 'nav-item' // Show the signup item
                 }));
@@ -118,40 +117,55 @@ function Navbar() {
         };
     }, [ isloaded, toto]);
 
-    async function logout() {
-        // console.log("token in fixed navbar: " , token)
-        setLoader(true)
-        await axiosInstance.post(`/users/logout`, {
-                token: toto,
-            }, {
-                headers:{
-                    "Authorization": `Token ${toto}`,
-                    "Content-Type": "application/json",
-                }
-            }
-        ).then(res => {
-            console.log("res in logout", res)
-            if (res.data.success) {
-                setLoader(false)
-                localStorage.removeItem('manfa3aToken');
-                localStorage.removeItem('manfa3aProfile')
-                dispatch(isload(false));
-                navigate('/', { replace: true });
-            }else{
-                if (res.data.error === "too_many_requests") {
-                    dispatch(error_many(true));
-                    navigate("/", {replace: true});
-                }
-            }
-
-        }).catch(error => {
-            console.log(error);
-        });
-    }
-
-
+    // async function logout() {
+    //     // console.log("token in fixed navbar: " , token)
+    //     setLoader(true)
+    //     await axiosInstance.post(`/users/logout`, {
+    //             token: toto,
+    //         }, {
+    //             headers:{
+    //                 "Authorization": `Token ${toto}`,
+    //                 "Content-Type": "application/json",
+    //             }
+    //         }
+    //     ).then(res => {
+    //         console.log("res in logout", res)
+    //             setLoader(false)
+    //             localStorage.removeItem('manfa3aToken');
+    //         if (res.data.success) {
+    //             localStorage.removeItem('manfa3aProfile')
+    //             dispatch(isload(false));
+    //             navigate('/', { replace: true });
+    //         }else{
+    //             if (res.data.error === "too_many_requests") {
+    //                 dispatch(error_many(true));
+    //                 navigate("/", {replace: true});
+    //             }
+    //         }
+    //
+    //     }).catch(error => {
+    //         console.log(error);
+    //     });
+    // }
+// function scrolld () {
+//     const scrol =     document.querySelector('.navbar')
+//     if (window.scrollY > 0 ) {
+//     // .classList.toggle('', window.scrollY > 0
+//     //     console.log("hamada")
+//     //     scrol.classList.add('fixed-top')
+//         // scrol.classList.add('transitio')
+//         // scrol.classList.toggle('sticky')
+//         // scrol.styles('position','fixed')
+//         // scrol.classList.toggle('fixed')
+//     }else {
+//         // scrol.classList.remove('fixed-top')
+//     }
+// }
+// scrolld()
     return (
-        <nav data-aos="zoom-fade-in"  className={`navbar navbar-expand-lg navbar-light  ${navPosition}  nav-underline  text-light fw-bold`} dir='rtl'>
+        <nav
+            // data-aos="zoom-fade-in"
+            className={` navbar  navbar-expand-lg navbar-light  ${navPosition}  nav-underline  text-light fw-bold`} dir='rtl'>
         <div className="container-fluid">
         <Link className="navbar-brand" href="#"><img  src={image } alt='logo'/></Link>
             <div className={`${navitems.signout}`}>
@@ -160,7 +174,7 @@ function Navbar() {
             </div>
             <div className='d-flex gap-3'>
                 <button className={`  btn  text-capitalize  fw-bold  text-bg-light border ${navitems.signin}`} type="button">
-                    <Link className='text-decoration-none text-primary ' to='/login' >تسجيـل الدخـول</Link>
+                    <Link className='link-dark text-decoration-none text-primary ' to='/login' >تسجيـل الدخـول</Link>
                 </button>
                 <button className="navbar-toggler   " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon "/>
@@ -191,11 +205,11 @@ function Navbar() {
             <li className="nav-item">
                 <Link className="nav-link text-light" to="#">المدونة</Link>
             </li>
-            <li className="nav-item">
-                <Link className="nav-link text-light" to="#">الاسئلة الشائعه</Link>
+            <li className="nav-item" >
+                <Link className="nav-link text-light link-opacity-100-hover" to="ass">الاسئلة الشائعه</Link>
             </li>
         <button  className={` btn text-capitalize  fw-bold btn text-bg-primary  border ${navitems.signin}`} type="button">
-                <Link className={` text-decoration-none  text-light  `}  to="/register">انشاء حساب</Link>
+                <Link className={` text-decoration-none link-dark  text-light  `}  to="/register">انشاء حساب</Link>
         </button>
 
         </ul>

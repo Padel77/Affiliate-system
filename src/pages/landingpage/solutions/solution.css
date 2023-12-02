@@ -1,3 +1,7 @@
 .card{
     border-radius: 8% !important;
 }
+.card:hover{
+    border: 2px solid #0c1a61;
+    transition: 0.8s ease-in-out;
+}

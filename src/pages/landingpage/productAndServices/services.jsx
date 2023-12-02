@@ -1,6 +1,7 @@
 import './services.css';
 import obgImg2 from '../../../assets/cards/B6.png';
 
+
 function Services() {
     return (
         <div className="container pt-5">
@@ -9,20 +10,15 @@ function Services() {
                     <h2 className=' m-md-auto text-end border-end border-primary border-5 p-0 pe-2'>ازاى ابدأ اسوق لمنتجات منفعه؟</h2>
                 </div>
                 <div className="row d-flex row-cols-md-3 g-4">
-                    <div className="col">
-                        <div className="card mb-3" style={{maxWidth: '540px'}}>
-                            <div className="row g-0">
-                                <div className="col-md-7">
-                                    <div className="card-body">
-                                        <h4 className="card-title text-primary pb-3">الامان والتنظيم</h4>
-                                        <p className="card-text fw-bold">يوفر انجزني نظام عالمي لتنظيم منتجاتك وانظمة
-                                            حماية للحفاظ علي المنتجات</p>
-                                    </div>
-                                </div>
-
-                                <div className="col-md-5">
-                                    <img src={obgImg2} className="img-fluid rounded-start" alt="..."/>
-                                </div>
+                    <div className="col ">
+                        <div className='  fs-3 text-bg-primary p-3 position-absolute flex-center  rounded-circle z-1'>
+                            <h3>1</h3>
+                        </div>
+                        <div className="z-0 border mt-4 pt-5 card ">
+                            <div className="card-body z-1 ">
+                                <h4 className="card-title text-primary pb-3">الامان والتنظيم</h4>
+                                <p className="card-text fw-bold">يوفر انجزني نظام عالمي لتنظيم منتجاتك وانظمة
+                                    حماية للحفاظ علي المنتجات</p>
                             </div>
                         </div>
                     </div>
@@ -228,7 +224,8 @@ function Services() {
                     </div>
                 </div>
             </div>
-        </div>);
+        </div>
+    );
 }
 
 export default Services;
